@@ -2,10 +2,125 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Website in Bearbeitung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balz Media | Hier entsteht etwas Großes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #111, #222, #000, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .divider {
+            height: 2px;
+            width: 50px;
+            background: #fff;
+            margin: 1.5rem auto;
+            opacity: 0.5;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #aaa;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #cccccc;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
-    <h1>Website wird erstellt</h1>
-    <p>Diese Website befindet sich derzeit in Bearbeitung.</p>
+
+    <div class="container">
+        <div class="logo">Balz Media</div>
+        <div class="status-badge">Website im Aufbau</div>
+        
+        <h1>Hier entsteht etwas Großes.</h1>
+        <div class="divider"></div>
+        <p>Wir arbeiten im Hintergrund unter Hochdruck an unserer neuen Präsenz. Bald findest du hier erstklassigen Video-Content und maßgeschneiderte Social-Media-Lösungen.</p>
+        
+        <!-- Ersetze info@deinedomaene.de mit deiner echten E-Mail-Adresse -->
+        <a href="mailto:info@deinedomaene.de" class="contact-btn">Jetzt Kontakt aufnehmen</a>
+    </div>
+
 </body>
 </html>
