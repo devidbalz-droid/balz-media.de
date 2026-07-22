@@ -1,27 +1,30 @@
-const themeToggle = document.getElementById('theme-toggle');
+// Dark / Light Mode Toggle
+const toggleBtn = document.getElementById('theme-toggle');
 
-window.onload = function() {
-    window.scrollTo(0, 0);
-};
-
-let currentTheme = localStorage.getItem('theme');
-if (!currentTheme) {
-    currentTheme = 'dark';
-    localStorage.setItem('theme', 'dark');
-}
-
-document.documentElement.setAttribute('data-theme', currentTheme);
-updateButtonText(currentTheme);
-
-themeToggle.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    let newTheme = theme === 'light' ? 'dark' : 'light';
+toggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
     
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateButtonText(newTheme);
+    if (currentTheme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        toggleBtn.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        toggleBtn.textContent = '🌙 Dark Mode';
+    }
 });
 
-function updateButtonText(theme) {
-    themeToggle.textContent = theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
-}
+// Mobile Burger Menü Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Menü automatisch schließen, wenn ein Link geklickt wird
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
