@@ -3,161 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balz Media | Hier entsteht etwas Großes</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        body {
-            /* Der edle, dunkle Farbverlauf */
-            background: linear-gradient(-45deg, #111, #222, #000, #1a1a1a);
-            background-size: 400% 400%;
-            /* Animation läuft jetzt in 6 Sekunden statt 15 Sekunden durch -> Schneller! */
-            animation: gradientBG 6s ease infinite;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            overflow-x: hidden;
-            overflow-y: auto; /* Fix für den Mac-Zoom-Bug */
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            text-align: center;
-            width: 100%;
-            max-width: 500px; /* Begrenzt die Breite auf dem Desktop, damit es edel wirkt */
-            margin: auto;
-            /* Kein Kasten mehr: Hintergrund und Rahmen sind komplett entfernt */
-            background: transparent;
-            border: none;
-        }
-
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            background: linear-gradient(45deg, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            color: #aaa;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-
-        h1 {
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: #ccc;
-            margin-bottom: 12px;
-        }
-
-        .divider {
-            height: 2px;
-            width: 40px;
-            background: #fff;
-            margin: 16px auto;
-            opacity: 0.3;
-        }
-
-        p {
-            font-size: 0.95rem;
-            color: #888;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            padding: 12px 32px;
-            background: #ffffff;
-            color: #000000;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .contact-btn:hover {
-            background: #cccccc;
-            transform: translateY(-2px);
-        }
-
-        /* ANPASSUNG FÜR FLXIBLE SCREENS UND HANDY-QUERFORMAT */
-        @media (max-height: 540px) or (max-width: 480px) {
-            body {
-                padding: 20px 10px;
-            }
-            .logo {
-                font-size: 1.8rem;
-                margin-bottom: 8px;
-            }
-            .status-badge {
-                margin-bottom: 16px;
-                padding: 4px 10px;
-                font-size: 0.7rem;
-            }
-            h1 {
-                font-size: 1.3rem;
-                margin-bottom: 8px;
-            }
-            .divider {
-                margin: 12px auto;
-            }
-            p {
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-            .contact-btn {
-                padding: 10px 24px;
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+    <title>Balz Media | High-End Videoproduktion & Social Media</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="logo">Balz Media</div>
-        <div class="status-badge">Website im Aufbau</div>
-        
-        <h1>Hier entsteht etwas Großes.</h1>
-        <div class="divider"></div>
-        <p>Wir arbeiten im Hintergrund unter Hochdruck an unserer neuen Präsenz. Bald findest du hier erstklassigen Video-Content und maßgeschneiderte Social-Media-Lösungen.</p>
-        
-        <a href="mailto:balz.media@web.de" class="contact-btn">Jetzt Kontakt aufnehmen</a>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">BALZ <span>MEDIA</span></div>
+        <div class="nav-links">
+            <a href="#home">Start</a>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#fakten">Fakten</a>
+            <a href="#portfolio">Projekte</a>
+            <a href="#ueber-mich">Über mich</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+        <button id="theme-toggle" class="toggle-btn">☀️ Light Mode</button>
+    </nav>
 
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Kino-Qualität für dein Business.</h1>
+            <p>High-End Videos, Reels und Social Media Management, die Kunden anziehen.</p>
+            <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
+        </div>
+    </header>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="services-section">
+        <h2>Meine Leistungen</h2>
+        <p class="section-subtitle">Vom ersten Konzept bis zum fertigen, reichweitenstarken Video – alles aus einer Hand.</p>
+        <div class="services-grid">
+            <div class="service-box">
+                <div class="service-num">01</div>
+                <h3>Konzept & Strategie</h3>
+                <p>Ein gutes Video beginnt auf dem Papier. Ich entwickle für dein Business maßgeschneiderte Content-Ideen, schreibe conversion-starke Skripte und erstelle einen klaren Fahrplan, damit wir exakt deine Zielgruppe erreichen.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-num">02</div>
+                <h3>High-End Produktion</h3>
+                <p>Der Drehtag. Mit professionellem Kamera-, Licht- und Ton-Equipment setze ich deine Marke cineastisch in Szene. Egal ob dynamische Social Media Reels oder hochwertige Imagefilme – wir drehen in echter Kino-Qualität.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-num">03</div>
+                <h3>Cinematic Postproduktion</h3>
+                <p>Im Schnitt entsteht die Magie. Ich übernehme den dynamischen Videoschnitt, professionelles Sounddesign, perfekt lesbare Untertitel für Social Media und das finale Color Grading (Kino-Farblook), das die Zuschauer fesselt.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-num">04</div>
+                <h3>Social Media Management</h3>
+                <p>Das beste Video nützt nichts, wenn es niemand sieht. Ich übernehme das komplette Handling deiner Kanäle: vom optimierten Hochladen über packende Bildunterschriften bis hin zur ständigen Performance-Analyse.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zahlen & Fakten Section -->
+    <section id="fakten" class="stats-section">
+        <h2>Warum Videos dein Business verändern</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">85%</div>
+                <p>aller Internetnutzer schauen monatlich Videos. Wer nicht filmt, bleibt für den Markt unsichtbar.</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5x mehr</div>
+                <p>Aufmerksamkeit erzielen Kurzvideos (Reels & TikToks) im direkten Vergleich zu statischen Bildern.</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">2x höher</div>
+                <p>ist die Kaufwahrscheinlichkeit von Kunden, nachdem sie ein starkes Produktvideo gesehen haben.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Showcase Section -->
+    <section id="portfolio" class="showcase-section">
+        <h2>Aktuelle Projekte</h2>
+        <p class="section-subtitle">Ein Auszug aus aktuellen Produktionen, die sich derzeit in der Postproduktion befinden.</p>
+        <div class="showcase-grid">
+            <div class="showcase-item">
+                <div class="showcase-icon">🎥</div>
+                <h3>Cinematic Imagefilme</h3>
+                <span class="status-tag">Im Premium-Schnitt</span>
+            </div>
+            <div class="showcase-item">
+                <div class="showcase-icon">📱</div>
+                <h3>Social Media Reels</h3>
+                <span class="status-tag">In der Optimierung</span>
+            </div>
+            <div class="showcase-item">
+                <div class="showcase-icon">🎬</div>
+                <h3>Recruiting-Videos</h3>
+                <span class="status-tag">Color Grading</span>
+            </div>
+            <div class="showcase-item">
+                <div class="showcase-icon">🚀</div>
+                <h3>Brand Kampagnen</h3>
+                <span class="status-tag">Postproduktion</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über mich Section -->
+    <section id="ueber-mich" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="Bild.jpg" alt="Devid Balz">
+            </div>
+            <div class="about-text">
+                <h2>Hinter der Linse</h2>
+                <p>Hi, ich bin Devid Balz. Für mich ging es bei Videos schon immer um mehr als nur um bewegte Bilder – es geht darum, wichtige Momente und Emotionen unverfälscht festzuhalten.</p>
+                <p>Für Unternehmen ist die Realität heute klar: Die digitale Welt wird immer visueller. Egal ob Social Media, Recruiting oder Markenaufbau – hochwertige Videos und gezielte Video-Werbung sind in der heutigen Zeit der mächtigste Weg, um Menschen wirklich zu erreichen und als Kunden zu gewinnen.</p>
+                <p>Mit Balz Media sorge ich dafür, dass dein Business genau diese Aufmerksamkeit bekommt. Modern, direkt und in Kino-Qualität.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="contact-section">
+        <h2>Lass uns dein Projekt starten</h2>
+        <p>Wähle den Weg, der für dich am leichtesten ist. Ich melde mich umgehend bei dir.</p>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/4915203952714" target="_blank" class="contact-btn whatsapp">💬 WhatsApp Nachricht</a>
+            <a href="mailto:balz.media@web.de" class="contact-btn email">✉️ E-Mail schreiben</a>
+            <a href="tel:+4915203952714" class="contact-btn phone">📞 Direkt anrufen</a>
+        </div>
+
+        <div class="social-contact-wrapper">
+            <p class="social-title">Oder folge meiner Arbeit auf Social Media:</p>
+            <div class="social-links">
+                <a href="https://instagram.com/balz.media" target="_blank" class="social-link-item" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" class="social-icon-svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Balz Media. Alle Rechte vorbehalten. | <a href="impressum.html">Impressum</a></p>
+            <div class="footer-socials">
+                <a href="https://instagram.com/balz.media" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
