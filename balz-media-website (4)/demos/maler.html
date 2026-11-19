@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malerbetrieb Weber | Maler in Musterstadt</title>
+<style>
+:root{--blue:#1d4ed8;--navy:#0f1f3d;--sky:#eaf1ff;--ink:#14213d;--muted:#5d6b85;--line:#e3e8f2;--yellow:#ffc83d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.btn{display:inline-block;padding:15px 26px;border-radius:10px;font-weight:700;font-size:15px;transition:.2s}
+.blue{background:var(--blue);color:#fff}.blue:hover{background:#163fb3}
+.yel{background:var(--yellow);color:var(--navy)}
+.line{border:2px solid var(--line)}
+.top{background:var(--navy);color:#c9d4ea;font-size:13px}
+.top .wrap{display:flex;justify-content:space-between;padding:9px 22px;flex-wrap:wrap;gap:8px}
+nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+.logo i{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--blue),#60a5fa);display:block}
+.links{display:flex;gap:28px;font-size:15px;color:var(--muted);font-weight:500}
+.hero{background:linear-gradient(180deg,var(--sky),#fff);padding:80px 0 90px;overflow:hidden}
+.hg{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.pill{display:inline-block;background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:30px;font-size:13px;font-weight:700;color:var(--blue)}
+.hero h1{font-size:clamp(40px,6vw,64px);margin:18px 0 20px}.hero h1 span{color:var(--blue)}
+.hero p{color:var(--muted);font-size:18px;margin-bottom:30px;max-width:500px}
+.checks{display:flex;gap:22px;margin-top:30px;flex-wrap:wrap;font-weight:700;font-size:14px}
+.checks span::before{content:"✓ ";color:var(--blue)}
+.wall{aspect-ratio:4/3.4;border-radius:22px;position:relative;overflow:hidden;background:linear-gradient(90deg,#dfe7f5 0 58%,#2f6fe8 58%);box-shadow:0 30px 60px -30px rgba(15,31,61,.5)}
+.roller{position:absolute;left:46%;top:16%;width:30%;height:16%;background:var(--yellow);border-radius:12px;box-shadow:inset 0 -8px 0 rgba(0,0,0,.08)}
+.roller::after{content:"";position:absolute;left:44%;top:100%;width:10px;height:150%;background:#2b2b2b;border-radius:4px}
+.drip{position:absolute;left:58%;top:0;bottom:0;width:4%;background:repeating-linear-gradient(180deg,#2f6fe8 0 60px,#2a63d4 60px 64px)}
+.rev{position:absolute;left:6%;bottom:8%;background:#fff;border-radius:14px;padding:14px 18px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.rev b{color:#f5a400;font-size:16px}
+section{padding:90px 0}
+.sh{text-align:center;max-width:620px;margin:0 auto 50px}
+.sh h2{font-size:clamp(32px,4.5vw,46px);margin:10px 0 12px}.sh p{color:var(--muted)}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{border:1px solid var(--line);border-radius:16px;padding:30px;transition:.2s}
+.svc:hover{border-color:var(--blue);transform:translateY(-4px)}
+.ic{width:48px;height:48px;border-radius:12px;background:var(--sky);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+.svc h3{font-size:20px;margin-bottom:8px}.svc p{color:var(--muted);font-size:15px}
+.stats{background:var(--navy);color:#fff}
+.stats .row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats b{display:block;font-size:44px;color:var(--yellow)}.stats span{color:#b8c4dd;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.st{background:var(--sky);border-radius:16px;padding:28px;counter-increment:s}
+.st::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;margin-bottom:16px}
+.st h3{font-size:18px;margin-bottom:6px}.st p{color:var(--muted);font-size:14px}
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.cbox{background:var(--sky);border-radius:20px;padding:36px}
+.cbox a{display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid #d3def3;font-weight:700}
+form{display:grid;gap:12px}
+input,textarea,select{width:100%;padding:15px;border:1.5px solid var(--line);border-radius:10px;font:inherit}
+textarea{min-height:110px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}
+.fo{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:860px){.links{display:none}.hg,.contact{grid-template-columns:1fr}.svcs,.steps{grid-template-columns:1fr 1fr}.stats .row{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.svcs,.steps{grid-template-columns:1fr}.top .wrap span:last-child{display:none}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>📞 0123 456789 · Mo–Fr 7–17 Uhr</span><span>Meisterbetrieb in Musterstadt und Umgebung</span></div></div>
+<nav><div class="wrap nav"><div class="logo"><i></i>Malerbetrieb Weber</div><div class="links"><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a><a href="#kontakt">Kontakt</a></div><a class="btn blue" href="#kontakt" style="padding:11px 18px;font-size:14px">Kostenloses Angebot</a></div></nav>
+
+<header class="hero"><div class="wrap hg">
+<div><span class="pill">Meisterbetrieb seit 1998</span>
+<h1>Saubere Arbeit.<br><span>Faire Preise.</span><br>Pünktlich fertig.</h1>
+<p>Wir streichen, tapezieren und renovieren Wohnungen, Häuser und Gewerberäume in Musterstadt und 30 km Umkreis.</p>
+<a class="btn blue" href="#kontakt">Kostenloses Angebot anfordern</a> <a class="btn line" href="tel:0123456789">Direkt anrufen</a>
+<div class="checks"><span>Festpreis-Angebot</span><span>Besenrein übergeben</span><span>Termin in 2 Wochen</span></div></div>
+<div class="wall"><div class="drip"></div><div class="roller"></div><div class="rev"><b>★★★★★</b><br>„Schnell, sauber, super freundlich!“</div></div>
+</div></header>
+
+<section id="leistungen"><div class="wrap">
+<div class="sh"><span class="pill">Leistungen</span><h2>Alles rund um Farbe und Wand</h2><p>Vom einzelnen Zimmer bis zum kompletten Haus, innen wie außen.</p></div>
+<div class="svcs">
+<div class="svc"><div class="ic">🎨</div><h3>Innenanstrich</h3><p>Wände und Decken in Wunschfarbe, mit sauberem Abdecken und Aufräumen.</p></div>
+<div class="svc"><div class="ic">🏠</div><h3>Fassade</h3><p>Fassadenanstrich, Reinigung und Schutz, damit dein Haus lange schön bleibt.</p></div>
+<div class="svc"><div class="ic">🧻</div><h3>Tapezieren</h3><p>Raufaser, Vlies oder Designtapete, glatt und fugenlos verarbeitet.</p></div>
+<div class="svc"><div class="ic">✨</div><h3>Spachteltechnik</h3><p>Glatte Wände in Q3/Q4 oder kreative Oberflächen wie Betonoptik.</p></div>
+<div class="svc"><div class="ic">🚪</div><h3>Lackierarbeiten</h3><p>Türen, Fenster, Heizkörper und Geländer wie neu.</p></div>
+<div class="svc"><div class="ic">🔑</div><h3>Renovierung bei Auszug</h3><p>Schnell und zuverlässig, damit du deine Kaution zurückbekommst.</p></div>
+</div></div></section>
+
+<section class="stats" style="padding:60px 0"><div class="wrap row">
+<div><b>25+</b><span>Jahre Erfahrung</span></div><div><b>1.200+</b><span>Projekte</span></div><div><b>4,9 ★</b><span>bei Google</span></div><div><b>8</b><span>Fachkräfte im Team</span></div>
+</div></section>
+
+<section id="ablauf"><div class="wrap">
+<div class="sh"><span class="pill">Ablauf</span><h2>So einfach geht's</h2></div>
+<div class="steps">
+<div class="st"><h3>Anfrage</h3><p>Formular ausfüllen oder anrufen, gerne mit Fotos.</p></div>
+<div class="st"><h3>Besichtigung</h3><p>Wir schauen uns alles kostenlos vor Ort an.</p></div>
+<div class="st"><h3>Festpreis</h3><p>Du bekommst ein klares Angebot ohne Überraschungen.</p></div>
+<div class="st"><h3>Fertig</h3><p>Wir arbeiten sauber und übergeben besenrein.</p></div>
+</div></div></section>
+
+<section id="kontakt" style="padding-top:0"><div class="wrap contact">
+<div class="cbox"><h2 style="font-size:34px;margin-bottom:12px">Kostenloses Angebot</h2><p style="color:var(--muted);margin-bottom:16px">Wir melden uns innerhalb von 24 Stunden.</p>
+<a href="tel:0123456789">📞 0123 456789</a><a href="#">💬 WhatsApp schreiben</a><a href="#">✉️ info@maler-weber-demo.de</a><p style="margin-top:16px;color:var(--muted);font-size:14px">Werkstraße 7 · 12345 Musterstadt</p></div>
+<form onsubmit="event.preventDefault();this.querySelector('button').textContent='Danke! Wir melden uns.'">
+<input placeholder="Name" required><input placeholder="Telefon oder E-Mail" required>
+<select><option>Was soll gemacht werden?</option><option>Innenanstrich</option><option>Fassade</option><option>Tapezieren</option><option>Renovierung bei Auszug</option><option>Etwas anderes</option></select>
+<textarea placeholder="Kurze Beschreibung (z.B. 3 Zimmer, ca. 70 m²)"></textarea>
+<button class="btn blue" style="border:0;cursor:pointer">Angebot anfordern</button></form>
+</div></section>
+
+<footer><div class="wrap fo"><span>© 2026 Malerbetrieb Weber · Demo-Website</span><span>Impressum · Datenschutz</span><span>Website von Balz Media</span></div></footer>
+</body>
+</html>
