@@ -188,7 +188,8 @@ header.scrolled{border-bottom-color:var(--line)}
 /* Über mich */
 .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
 .portrait{aspect-ratio:4/5;border-radius:24px;background:var(--bg2);display:grid;place-items:center;color:var(--soft);font-weight:700;overflow:hidden;border:1.5px dashed var(--line)}
-.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.portrait.has-img{border:0;background:var(--bg2)}
 .about p{color:var(--soft);margin-bottom:16px;max-width:54ch}
 .sig{font-weight:800;color:var(--ink)!important;margin-top:8px}
 
@@ -255,6 +256,7 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
   .split,.who,.about,.ref,.cta .in2{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr 1fr}
   .who,.about{gap:44px}
+  .about .portrait{max-width:440px;width:100%}
   .grid3{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr;gap:34px 20px}
   .phone:nth-child(3){display:none}
@@ -276,6 +278,7 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
   .phones{gap:14px}
   .phone{width:44%}.phone:nth-child(2){width:48%}
   .ref{padding:30px 24px}
+  .portrait{border-radius:18px}
   .list li{flex-direction:column;gap:2px}
   .list li span{text-align:left}
   .hero{padding:44px 0 80px}
