@@ -21,7 +21,7 @@
 <meta property="og:locale" content="de_DE">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Balz Media","url":"https://balz-media.de/","logo":"https://balz-media.de/img/logo-badge-dark-512.png","email":"info@balz-media.de","telephone":"+4915203952714","sameAs":["https://www.instagram.com/balz.media"]}</script>
 <script>try{var t=localStorage.getItem('bm-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style id="bm-video-css">
 /* Showreel-Video */
 .showreel{position:relative;margin-top:56px;border-radius:24px;overflow:hidden;aspect-ratio:16/9;background:#000;box-shadow:0 40px 90px -40px rgba(0,0,0,.55);isolation:isolate}
@@ -64,6 +64,19 @@
 .hero-film .ctas .btn{flex:1 1 100%;justify-content:center}
 .hero-film .facts{gap:8px 18px;font-size:14px;margin-top:22px}
 }
+/* Handy: Texte sauber und einheitlich ausrichten */
+@media(max-width:700px){
+section{padding:68px 0}
+.hero-film{padding:0 0 56px}
+.hero-film .hf-in{margin-top:0;padding-top:30px}
+.hero-film .hf-shade{background:linear-gradient(0deg,#0b0b0b 0%,rgba(11,11,11,0) 26%),linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,0) 18%)}
+.hero-film .kicker .k-long{display:none}
+.ref{gap:14px!important}
+.ref .lead{margin-top:0}
+.cta .in2{gap:22px}
+.page-hero{padding:40px 0 56px}
+.contact-top,.kx-hero{padding-top:36px}
+}
 </style>
 </head>
 <body>
@@ -87,7 +100,7 @@
   </video>
   <div class="hf-shade" aria-hidden="true"></div>
   <div class="wrap hf-in">
-    <span class="kicker">Videografie aus der Ortenau · Websites deutschlandweit</span>
+    <span class="kicker">Videografie aus der Ortenau<span class="k-long"> · Websites deutschlandweit</span></span>
     <h1>Videos, die bleiben. <span class="o">Websites,</span> die Kunden bringen.</h1>
     <p class="lead">Ich bin Devid und halte fest, was wichtig ist: eure Hochzeit, deine Firma, dein Event. Ich plane, drehe und schneide alles selbst. Und wenn du willst, baue ich dir die passende Website dazu.</p>
     <div class="ctas">
@@ -165,6 +178,6 @@
     <div class="fbot"><span>© 2026 Balz Media · Devid Balz</span><span>Videografie · Webdesign</span></div>
   </div>
 </footer>
-<script src="main.js?v=4"></script>
+<script src="main.js?v=5"></script>
 </body>
 </html>

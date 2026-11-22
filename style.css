@@ -418,3 +418,17 @@ textarea{min-height:160px;resize:vertical;line-height:1.55}
 .phone,.phone:nth-child(2){flex:0 0 66%;width:66%}
 }
 .swipe-hint{display:none}@media(max-width:1000px){.swipe-hint{display:inline}}
+
+/* Handy: Texte sauber und einheitlich ausrichten */
+@media(max-width:700px){
+section{padding:68px 0}
+.hero-film{padding:0 0 56px}
+.hero-film .hf-in{margin-top:0;padding-top:30px}
+.hero-film .hf-shade{background:linear-gradient(0deg,#0b0b0b 0%,rgba(11,11,11,0) 26%),linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,0) 18%)}
+.hero-film .kicker .k-long{display:none}
+.ref{gap:14px!important}
+.ref .lead{margin-top:0}
+.cta .in2{gap:22px}
+.page-hero{padding:40px 0 56px}
+.contact-top,.kx-hero{padding-top:36px}
+}
