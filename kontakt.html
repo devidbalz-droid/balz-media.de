@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://balz-media.de/img/og-balz-media.jpg">
 <meta property="og:locale" content="de_DE">
 <script>try{var t=localStorage.getItem('bm-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <header>
@@ -35,130 +35,280 @@
   </div>
   <nav class="mobile-nav wrap" id="mnav" aria-label="Menü"><a href="index.html">Start</a><a href="videografie.html">Videografie</a><a href="webdesign.html">Webdesign</a><a href="kontakt.html">Kontakt</a><a href="https://wa.me/4915203952714?text=Hallo%20Devid%2C%20ich%20habe%20eine%20Anfrage." target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/balz.media" target="_blank" rel="noopener">Instagram</a></nav>
 </header>
-<main>
+<main class="kx">
+<style id="bm-form-css">
+.kx{--kx-bg:#0c0c0c;--kx-card:#141414;--kx-line:rgba(255,255,255,.12);--kx-soft:rgba(255,255,255,.62);--kx-acc:#ffffff}
+.kx-hero{padding-top:64px;padding-bottom:40px}
+.kx-hero h1{font-size:clamp(48px,7.4vw,104px);max-width:none;margin:14px 0 18px}
+.kx-hero .lead{max-width:52ch}
+.kx-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:28px;align-items:start;padding-bottom:110px}
+.kx-card{position:relative;background:var(--kx-bg);color:#fff;border-radius:28px;padding:34px 34px 30px;overflow:hidden;overflow:clip;scroll-margin-top:90px;isolation:isolate;box-shadow:0 40px 100px -50px rgba(0,0,0,.6);min-height:560px;display:flex;flex-direction:column}
+.kx-card::before{content:"";position:absolute;inset:-40% -20% auto auto;width:520px;height:520px;background:radial-gradient(closest-side,rgba(255,255,255,.10),rgba(255,255,255,0));z-index:-1;pointer-events:none}
+.kx-card::after{content:"";position:absolute;inset:auto auto -45% -25%;width:560px;height:560px;background:radial-gradient(closest-side,rgba(255,255,255,.06),rgba(255,255,255,0));z-index:-1;pointer-events:none}
+.kx-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:26px}
+.kx-count{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--kx-soft)}
+.kx-back{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--kx-soft);font:inherit;font-size:15px;font-weight:700;cursor:pointer;padding:6px 0;visibility:hidden}
+.kx-back:hover{color:#fff}.kx-back svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.kx-bar{height:4px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden;margin-bottom:34px}
+.kx-bar i{display:block;height:100%;width:25%;background:#fff;border-radius:4px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.kx-step{display:none;flex:1;flex-direction:column;padding:0;margin:0}
+.kx-step.on{display:flex;animation:kxin .45s cubic-bezier(.2,.8,.2,1)}
+.kx-step.back.on{animation-name:kxinb}
+@keyframes kxin{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@keyframes kxinb{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+.kx-q{font-size:clamp(28px,3.4vw,40px);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin-bottom:8px;max-width:none}
+.kx-sub{color:var(--kx-soft);font-size:16px;margin-bottom:26px}
+.kx-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kx-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:20px 18px;border-radius:18px;border:1.5px solid var(--kx-line);background:rgba(255,255,255,.03);color:#fff;font:inherit;text-align:left;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.kx-tile:hover{border-color:rgba(255,255,255,.5);transform:translateY(-3px)}
+.kx-tile.sel{background:#fff;color:#0c0c0c;border-color:#fff}
+.kx-tile svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.kx-tile b{font-size:17px;letter-spacing:-.01em}
+.kx-tile small{display:block;font-size:13px;opacity:.6;margin-top:2px;font-weight:500}
+.kx-f{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kx-f .full{grid-column:1/-1}
+.kx-in{position:relative;display:block}
+.kx-in input,.kx-in textarea,.kx-in select{width:100%;background:rgba(255,255,255,.04);border:1.5px solid var(--kx-line);border-radius:14px;color:#fff;font:inherit;font-size:17px;padding:26px 16px 10px;outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;appearance:none}
+.kx-in textarea{min-height:170px;resize:vertical;line-height:1.5}
+.kx-in input[type=date]{min-height:62px;color-scheme:dark}
+.kx-in span{position:absolute;left:17px;top:19px;color:var(--kx-soft);font-size:17px;pointer-events:none;transition:all .18s ease}
+.kx-in input:focus,.kx-in textarea:focus{border-color:#fff;background:rgba(255,255,255,.07)}
+.kx-in input:focus+span,.kx-in input:not(:placeholder-shown)+span,.kx-in textarea:focus+span,.kx-in textarea:not(:placeholder-shown)+span,.kx-in.fixed span{top:8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.kx-in input::placeholder,.kx-in textarea::placeholder{color:transparent}
+.kx-in.bad input{border-color:#ff6b5e}
+.kx-lbl{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--kx-soft);margin:6px 0 10px}
+.kx-chips{display:flex;flex-wrap:wrap;gap:8px}
+.kx-chips label{position:relative}
+.kx-chips input{position:absolute;opacity:0;width:1px;height:1px}
+.kx-chips span{display:block;padding:11px 16px;border-radius:999px;border:1.5px solid var(--kx-line);font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;user-select:none}
+.kx-chips span:hover{border-color:rgba(255,255,255,.55)}
+.kx-chips input:checked+span{background:#fff;color:#0c0c0c;border-color:#fff}
+.kx-chips input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.kx-panel[hidden]{display:none}
+.kx-nav{display:flex;gap:10px;margin-top:auto;padding-top:28px;flex-wrap:wrap}
+.kx-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex:1 1 200px;padding:18px 24px;border-radius:14px;border:0;background:#fff;color:#0c0c0c;font:inherit;font-size:17px;font-weight:800;cursor:pointer;transition:transform .2s,opacity .2s}
+.kx-btn:hover{transform:translateY(-2px)}
+.kx-btn:disabled{opacity:.6;cursor:wait;transform:none}
+.kx-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.kx-btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.kx-btn.ghost svg{fill:currentColor;stroke:none}
+.kx-check{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--kx-soft);margin-top:18px;cursor:pointer}
+.kx-check input{width:22px;height:22px;flex:none;accent-color:#fff;margin-top:1px}
+.kx-check a{color:#fff}
+.kx-check.bad{color:#ff8a80}
+.kx-err{display:none;margin-top:16px;padding:12px 14px;border-radius:12px;background:rgba(255,107,94,.14);color:#ffb4ab;font-weight:600;font-size:15px}
+.kx-err a{color:#fff}
+.kx-done{display:none;flex:1;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:30px 0}
+.kx-done.on{display:flex;animation:kxin .5s ease}
+.kx-done .ring{width:92px;height:92px;border-radius:50%;background:#fff;color:#0c0c0c;display:grid;place-items:center;animation:kxpop .6s cubic-bezier(.2,1.4,.4,1)}
+.kx-done .ring svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:kxdraw .5s .35s forwards}
+@keyframes kxpop{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
+@keyframes kxdraw{to{stroke-dashoffset:0}}
+.kx-done h3{font-size:clamp(30px,4vw,44px);letter-spacing:-.03em}
+.kx-done p{color:var(--kx-soft);max-width:36ch}
+.kx-side{display:flex;flex-direction:column;gap:12px;position:sticky;top:100px}
+.kx-side h3{font-size:22px;margin:4px 0 6px}
+.kx-side p.s{color:var(--soft);font-size:16px;margin-bottom:6px}
+.kx-dl{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;border:1.5px solid var(--line);text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s;background:var(--bg)}
+.kx-dl:hover{border-color:var(--ink);transform:translateY(-2px)}
+.kx-dl i{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--bg2);flex:none}
+.kx-dl i svg{width:22px;height:22px}
+.kx-dl small{display:block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.kx-dl b{font-size:17px;word-break:break-all}
+.kx-dl.wa i{background:#1fa855;color:#fff}
+.kx-promise{margin-top:8px;padding:20px;border-radius:18px;background:var(--bg2);font-size:15px;color:var(--soft)}
+.kx-promise b{color:var(--ink)}
+.kx .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+@media(max-width:960px){.kx-grid{grid-template-columns:1fr}.kx-side{position:static}}
+@media(max-width:640px){.kx-hero{padding-top:36px;padding-bottom:26px}.kx-card{border-radius:22px;padding:24px 18px 20px;min-height:0}.kx-tiles{grid-template-columns:1fr 1fr;gap:10px}.kx-tile{padding:16px 14px;gap:10px}.kx-tile svg{width:26px;height:26px}.kx-tile b{font-size:16px}.kx-f{grid-template-columns:1fr}.kx-btn{flex-basis:100%}.kx-bar{margin-bottom:26px}.kx-grid{padding-bottom:70px}}
+</style>
 
-<div class="wrap contact-top">
+<div class="wrap kx-hero">
   <span class="kicker">Kontakt</span>
   <h1>Was steht an?</h1>
-  <p class="lead">Video oder Website: Erzähl mir kurz, worum es geht. Ich melde mich innerhalb von 24 Stunden, für Videos mit einem Angebot, für Websites gern mit einer kostenlosen Demo.</p>
-  <ul class="direct">
-    <li><a href="https://wa.me/4915203952714?text=Hallo%20Devid%2C%20ich%20habe%20eine%20Anfrage." target="_blank" rel="noopener"><small>WhatsApp</small><b>+49 152 03952714</b><svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-    <li><a href="mailto:info@balz-media.de"><small>E-Mail</small><b>info@balz-media.de</b><svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-    <li><a href="https://www.instagram.com/balz.media" target="_blank" rel="noopener"><small>Instagram</small><b>@balz.media</b><svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-  </ul>
+  <p class="lead">Ein paar Klicks, und ich weiß, was du brauchst. Ich melde mich innerhalb von 24 Stunden – für Videos mit einem Angebot, für Websites gern mit einer kostenlosen Demo.</p>
 </div>
-<div class="wrap form-wrap">
-  <div class="form-head"><h2>Oder schreib mir hier.</h2><p class="lead">Dauert etwa 2 Minuten. Felder mit * brauche ich, der Rest ist freiwillig.</p></div>
-  <form id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+<div class="wrap kx-grid">
+  <form class="kx-card" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
     <input type="hidden" name="access_key" value="3d3bcd50-354d-4061-9bda-f7146537961b">
     <input type="hidden" name="subject" value="Neue Anfrage über balz-media.de">
     <input type="hidden" name="from_name" value="Website Balz Media">
+    <input type="hidden" name="Thema" id="kTopic" value="">
     <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-    <div class="step"><div class="sh"><span>01</span><h3>Worum geht's?</h3></div>
-      <fieldset class="chips"><legend class="sr">Thema</legend>
-        <label><input type="radio" name="Thema" value="Video" checked><span>Video</span></label>
-        <label><input type="radio" name="Thema" value="Website"><span>Website</span></label>
-        <label><input type="radio" name="Thema" value="Website + Video"><span>Website + Video</span></label>
-        <label><input type="radio" name="Thema" value="Etwas anderes"><span>Etwas anderes</span></label>
-      </fieldset>
-    </div>
+    <div class="kx-top"><button class="kx-back" type="button" id="kBack"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Zurück</button><span class="kx-count" id="kCount">Schritt 1 von 4</span></div>
+    <div class="kx-bar" aria-hidden="true"><i id="kBar"></i></div>
 
-    <div class="step"><div class="sh"><span>02</span><h3>Über dich</h3></div>
-      <div class="fields">
-        <label>Dein Name *<input id="fn" name="Name" data-l="Name" required autocomplete="name"></label>
-        <label>Telefon oder E-Mail *<input id="fc" name="Kontakt" data-l="Kontakt" required autocomplete="email" placeholder="So erreiche ich dich"></label>
-        <div class="grp full" data-for="Website|Website + Video|Etwas anderes">
-          <label class="full">Firma und Branche<input name="Firma" data-l="Firma" autocomplete="organization" placeholder="z. B. Bäckerei Müller"></label>
-        </div>
+    <!-- 1 Thema -->
+    <section class="kx-step on" data-step="1">
+      <h2 class="kx-q">Worum geht's?</h2><p class="kx-sub">Tipp einfach an, was passt.</p>
+      <div class="kx-tiles" role="group" aria-label="Thema">
+        <button type="button" class="kx-tile" data-t="hochzeit" data-label="Hochzeitsvideo"><svg viewBox="0 0 24 24"><circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="14" r="5.5"/><path d="M10 4l2-2 2 2-2 2z"/></svg><span><b>Hochzeit</b><small>Euer Tag als Film</small></span></button>
+        <button type="button" class="kx-tile" data-t="imagefilm" data-label="Imagefilm"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="14" height="12" rx="2.5"/><path d="M16.5 10.5l5-3v9l-5-3z"/></svg><span><b>Imagefilm</b><small>Für deine Firma</small></span></button>
+        <button type="button" class="kx-tile" data-t="social" data-label="Reels & Social Media"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 9.5v5l4-2.5z"/></svg><span><b>Reels &amp; Social</b><small>Einmalig oder monatlich</small></span></button>
+        <button type="button" class="kx-tile" data-t="event" data-label="Eventvideo"><svg viewBox="0 0 24 24"><path d="M4 20l4-11 7 7z"/><path d="M14 4v2M18 6l-1.5 1.5M20 10h-2M12 8.5c1.5-1.5 1.5-3 0-4.5"/></svg><span><b>Event</b><small>Feier, Eröffnung, Konzert</small></span></button>
+        <button type="button" class="kx-tile" data-t="website" data-label="Website"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span><b>Website</b><small>Zum Festpreis</small></span></button>
+        <button type="button" class="kx-tile" data-t="anderes" data-label="Etwas anderes"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18.5" cy="12" r="1.6"/></svg><span><b>Etwas anderes</b><small>Erzähl's mir</small></span></button>
       </div>
-    </div>
+    </section>
 
-    <div class="step grp" data-for="Website|Website + Video"><div class="sh"><span class="n"></span><h3>Zur Website</h3></div>
-      <div class="fields">
-        <label>Paket<select id="fp" name="Paket" data-l="Paket">
-          <option>Weiß ich noch nicht</option><option>Start (590 €)</option><option>Business (1.290 €)</option><option>Premium (2.490 €)</option></select></label>
-        <label>Bis wann soll sie online sein?<select name="Zeitrahmen" data-l="Online bis">
-          <option>So schnell wie möglich</option><option>In ca. 1 Monat</option><option>In 2–3 Monaten</option><option>Noch offen</option></select></label>
-        <label>Hast du schon eine Website?<input name="Bisherige Website" data-l="Bisherige Website" inputmode="url" placeholder="z. B. www.deine-firma.de"></label>
-        <label>Hast du Logo und Fotos?<select name="Logo und Fotos" data-l="Logo und Fotos">
-          <option>Ja, beides</option><option>Nur ein Logo</option><option>Nur Fotos</option><option>Nein, noch nicht</option></select></label>
-        <fieldset class="full chips multi"><legend>Was soll die Website können? <span class="opt">Mehrere möglich</span></legend>
+    <!-- 2 Details -->
+    <section class="kx-step" data-step="2">
+      <h2 class="kx-q" id="kQ2">Ein paar Details</h2><p class="kx-sub" id="kS2">Alles freiwillig – je mehr ich weiß, desto genauer mein Angebot.</p>
+      <div class="kx-panel" data-for="hochzeit" hidden><div class="kx-f">
+        <label class="kx-in fixed"><input type="date" name="Hochzeitsdatum" data-l="Datum" class="kDate"><span>Hochzeitsdatum</span></label>
+        <label class="kx-in"><input name="Location" data-l="Ort / Location" placeholder=" "><span>Ort / Location</span></label>
+        <div class="full"><span class="kx-lbl">Welches Paket interessiert euch?</span><div class="kx-chips">
+          <label><input type="radio" name="Paket" value="Trauung & Programm" data-l="Paket"><span>Trauung &amp; Programm</span></label>
+          <label><input type="radio" name="Paket" value="Der ganze Tag" data-l="Paket"><span>Der ganze Tag</span></label>
+          <label><input type="radio" name="Paket" value="Premium (2 Kameras)" data-l="Paket"><span>Premium (2 Kameras)</span></label>
+          <label><input type="radio" name="Paket" value="Beratet uns" data-l="Paket"><span>Beratet uns</span></label></div></div>
+      </div></div>
+      <div class="kx-panel" data-for="imagefilm" hidden><div class="kx-f">
+        <label class="kx-in full"><input name="Firma" data-l="Firma" placeholder=" " autocomplete="organization"><span>Firma &amp; Branche</span></label>
+        <div class="full"><span class="kx-lbl">Wofür ist der Film? <span style="text-transform:none;letter-spacing:0;font-weight:500">(mehrere möglich)</span></span><div class="kx-chips">
+          <label><input type="checkbox" name="Einsatz[]" value="Website"><span>Website</span></label>
+          <label><input type="checkbox" name="Einsatz[]" value="Social Media"><span>Social Media</span></label>
+          <label><input type="checkbox" name="Einsatz[]" value="Mitarbeitersuche"><span>Mitarbeitersuche</span></label>
+          <label><input type="checkbox" name="Einsatz[]" value="Werbung"><span>Werbung</span></label></div></div>
+        <div class="full"><span class="kx-lbl">Bis wann?</span><div class="kx-chips">
+          <label><input type="radio" name="Zeitrahmen" value="So schnell wie möglich" data-l="Zeitrahmen"><span>Schnell</span></label>
+          <label><input type="radio" name="Zeitrahmen" value="In 1–2 Monaten" data-l="Zeitrahmen"><span>1–2 Monate</span></label>
+          <label><input type="radio" name="Zeitrahmen" value="Noch offen" data-l="Zeitrahmen"><span>Noch offen</span></label></div></div>
+      </div></div>
+      <div class="kx-panel" data-for="social" hidden><div class="kx-f">
+        <label class="kx-in full"><input name="Firma" data-l="Firma" placeholder=" " autocomplete="organization"><span>Firma &amp; Branche</span></label>
+        <div class="full"><span class="kx-lbl">Was suchst du?</span><div class="kx-chips">
+          <label><input type="radio" name="Umfang" value="Einmalig (z. B. 3 Reels)" data-l="Umfang"><span>Einmalig (z. B. 3 Reels)</span></label>
+          <label><input type="radio" name="Umfang" value="Monatliche Betreuung" data-l="Umfang"><span>Monatliche Betreuung</span></label></div></div>
+        <div class="full"><span class="kx-lbl">Auf welchen Kanälen?</span><div class="kx-chips">
+          <label><input type="checkbox" name="Kanäle[]" value="Instagram"><span>Instagram</span></label>
+          <label><input type="checkbox" name="Kanäle[]" value="TikTok"><span>TikTok</span></label>
+          <label><input type="checkbox" name="Kanäle[]" value="YouTube"><span>YouTube</span></label>
+          <label><input type="checkbox" name="Kanäle[]" value="Facebook"><span>Facebook</span></label></div></div>
+      </div></div>
+      <div class="kx-panel" data-for="event" hidden><div class="kx-f">
+        <label class="kx-in fixed"><input type="date" name="Eventdatum" data-l="Datum" class="kDate"><span>Datum</span></label>
+        <label class="kx-in"><input name="Ort" data-l="Ort" placeholder=" "><span>Ort / Location</span></label>
+        <div class="full"><span class="kx-lbl">Was für ein Event?</span><div class="kx-chips">
+          <label><input type="radio" name="Eventart" value="Firmenfeier" data-l="Event"><span>Firmenfeier</span></label>
+          <label><input type="radio" name="Eventart" value="Eröffnung" data-l="Event"><span>Eröffnung</span></label>
+          <label><input type="radio" name="Eventart" value="Konzert / Party" data-l="Event"><span>Konzert / Party</span></label>
+          <label><input type="radio" name="Eventart" value="Geburtstag / Jubiläum" data-l="Event"><span>Geburtstag / Jubiläum</span></label></div></div>
+      </div></div>
+      <div class="kx-panel" data-for="website" hidden><div class="kx-f">
+        <label class="kx-in"><input name="Firma" data-l="Firma" placeholder=" " autocomplete="organization"><span>Firma &amp; Branche</span></label>
+        <label class="kx-in"><input name="Bisherige Website" data-l="Bisherige Website" placeholder=" " inputmode="url"><span>Bisherige Website (falls vorhanden)</span></label>
+        <div class="full"><span class="kx-lbl">Welches Paket?</span><div class="kx-chips" id="kPakete">
+          <label><input type="radio" name="Paket" value="Start (590 €)" data-l="Paket"><span>Start · 590 €</span></label>
+          <label><input type="radio" name="Paket" value="Business (1.290 €)" data-l="Paket"><span>Business · 1.290 €</span></label>
+          <label><input type="radio" name="Paket" value="Premium (2.490 €)" data-l="Paket"><span>Premium · 2.490 €</span></label>
+          <label><input type="radio" name="Paket" value="Weiß ich noch nicht" data-l="Paket"><span>Weiß ich noch nicht</span></label></div></div>
+        <div class="full"><span class="kx-lbl">Was soll sie können?</span><div class="kx-chips">
           <label><input type="checkbox" name="Funktionen[]" value="Kontaktformular"><span>Kontaktformular</span></label>
           <label><input type="checkbox" name="Funktionen[]" value="WhatsApp-Button"><span>WhatsApp-Button</span></label>
           <label><input type="checkbox" name="Funktionen[]" value="Terminbuchung"><span>Terminbuchung</span></label>
-          <label><input type="checkbox" name="Funktionen[]" value="Speisekarte / Preisliste"><span>Speisekarte / Preisliste</span></label>
-          <label><input type="checkbox" name="Funktionen[]" value="Bildergalerie"><span>Bildergalerie</span></label>
-          <label><input type="checkbox" name="Funktionen[]" value="Google-Profil"><span>Google-Profil</span></label>
-        </fieldset>
-      </div>
-    </div>
+          <label><input type="checkbox" name="Funktionen[]" value="Speisekarte / Preisliste"><span>Speisekarte / Preise</span></label>
+          <label><input type="checkbox" name="Funktionen[]" value="Bildergalerie"><span>Bildergalerie</span></label></div></div>
+      </div></div>
+      <div class="kx-panel" data-for="anderes" hidden><div class="kx-f">
+        <label class="kx-in full"><input name="Firma" data-l="Firma" placeholder=" " autocomplete="organization"><span>Firma (optional)</span></label>
+      </div></div>
+      <div class="kx-nav"><button class="kx-btn" type="button" data-next>Weiter<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </section>
 
-    <div class="step grp" data-for="Video|Website + Video"><div class="sh"><span class="n"></span><h3>Zum Video</h3></div>
-      <div class="fields">
-        <label class="full">Anlass<select name="Anlass" data-l="Anlass">
-          <option>Imagefilm für meine Firma</option><option>Reels / TikToks</option><option>Hochzeit</option><option>Event / Feier</option><option>Social-Media-Betreuung</option><option>Etwas anderes</option></select></label>
-        <label>Wann?<input type="date" name="Datum" data-l="Datum" id="fd"></label>
-        <label>Wo?<input name="Ort" data-l="Ort" placeholder="z. B. Offenburg oder Location"></label>
-      </div>
-    </div>
+    <!-- 3 Nachricht -->
+    <section class="kx-step" data-step="3">
+      <h2 class="kx-q" id="kQ3">Erzähl mir mehr.</h2><p class="kx-sub">Ein, zwei Sätze reichen. Du kannst das Feld auch leer lassen.</p>
+      <label class="kx-in"><textarea id="fm" name="Nachricht" data-l="Nachricht" placeholder=" "></textarea><span id="kHint">Deine Nachricht</span></label>
+      <div class="kx-nav"><button class="kx-btn" type="button" data-next>Weiter<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </section>
 
-    <div class="step last"><div class="sh"><span class="n"></span><h3 id="msgl">Deine Nachricht</h3></div>
-      <label class="full"><span class="sr">Nachricht</span><textarea id="fm" name="Nachricht" data-l="Nachricht" placeholder="Erzähl mir kurz von deiner Firma und was dir wichtig ist."></textarea></label>
-      <label class="check"><input type="checkbox" id="fcons" required><span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen. Meine Angaben werden nur zur Bearbeitung meiner Anfrage verwendet. *</span></label>
-      <p class="err" id="err" role="alert"></p>
-      <div class="send">
-        <button class="btn btn-ink" type="submit" id="send">Anfrage senden<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        <button class="btn btn-wa-line" type="button" id="sendwa"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 2.2.9 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.2-.3 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5z"/></svg>Lieber per WhatsApp</button>
+    <!-- 4 Kontakt -->
+    <section class="kx-step" data-step="4">
+      <h2 class="kx-q">Wie erreiche ich dich?</h2><p class="kx-sub">Fast geschafft – ich melde mich innerhalb von 24 Stunden.</p>
+      <div class="kx-f">
+        <label class="kx-in" id="wfn"><input id="fn" name="Name" placeholder=" " autocomplete="name" required><span>Dein Name *</span></label>
+        <label class="kx-in" id="wfc"><input id="fc" name="Kontakt" placeholder=" " autocomplete="email" required><span>Telefon oder E-Mail *</span></label>
+        <div class="full"><span class="kx-lbl">Am liebsten per</span><div class="kx-chips">
+          <label><input type="radio" name="Kontaktweg" value="WhatsApp" checked><span>WhatsApp</span></label>
+          <label><input type="radio" name="Kontaktweg" value="Anruf"><span>Anruf</span></label>
+          <label><input type="radio" name="Kontaktweg" value="E-Mail"><span>E-Mail</span></label></div></div>
       </div>
+      <label class="kx-check" id="wcons"><input type="checkbox" id="fcons"><span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen. Meine Angaben werden nur zur Bearbeitung meiner Anfrage verwendet. *</span></label>
+      <p class="kx-err" id="err" role="alert"></p>
+      <div class="kx-nav">
+        <button class="kx-btn" type="submit" id="send"><span>Anfrage senden</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="kx-btn ghost" type="button" id="sendwa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 2.2.9 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.2-.3 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5z"/></svg>Per WhatsApp senden</button>
+      </div>
+    </section>
+
+    <div class="kx-done" id="ok" role="status" tabindex="-1">
+      <div class="ring"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h3 id="okT">Danke!</h3>
+      <p>Deine Anfrage ist angekommen. Ich melde mich innerhalb von 24 Stunden bei dir.</p>
     </div>
-    <div class="ok" id="ok" role="status" tabindex="-1"></div>
   </form>
+
+  <aside class="kx-side">
+    <h3>Lieber direkt?</h3>
+    <p class="s">Schreib mir, wie es dir am liebsten ist.</p>
+    <a class="kx-dl wa" href="https://wa.me/4915203952714?text=Hallo%20Devid%2C%20ich%20habe%20eine%20Anfrage." target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 2.2.9 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.2-.3 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5z"/></svg></i><span><small>WhatsApp</small><b>+49 152 03952714</b></span></a>
+    <a class="kx-dl" href="mailto:info@balz-media.de"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></i><span><small>E-Mail</small><b>info@balz-media.de</b></span></a>
+    <a class="kx-dl" href="https://www.instagram.com/balz.media" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></i><span><small>Instagram</small><b>@balz.media</b></span></a>
+    <div class="kx-promise"><b>Antwort in 24 Stunden.</b> Für Videos bekommst du ein Angebot, für Websites gern eine kostenlose Demo – unverbindlich.</div>
+  </aside>
 </div>
+
 <script>
 (function(){
-  var f=document.getElementById('form'),q=new URLSearchParams(location.search),$=function(id){return document.getElementById(id)};
-  var hints={'Website':'Erzähl mir kurz von deiner Firma und was dir wichtig ist.','Video':'Was soll im Video passieren? Für wen ist es, und wo soll es laufen?','Website + Video':'Erzähl mir von deiner Firma und was du mit Website und Video erreichen willst.','Etwas anderes':'Was kann ich für dich tun?'};
-  function topic(){return f.querySelector('input[name=Thema]:checked').value}
-  function sync(){var t=topic(),n=3;
-    f.querySelectorAll('.grp').forEach(function(g){var on=g.dataset.for.split('|').indexOf(t)>-1;g.hidden=!on;
-      g.querySelectorAll('input,select,textarea').forEach(function(el){el.disabled=!on})});
-    f.querySelectorAll('.step').forEach(function(st){var sp=st.querySelector('.n');if(sp&&!st.hidden){sp.textContent=(n<10?'0':'')+n;n++}});
-    $('fm').placeholder=hints[t]||'';$('msgl').textContent=t==='Video'?'Was hast du vor?':'Deine Nachricht';}
-  f.querySelectorAll('input[name=Thema]').forEach(function(r){r.addEventListener('change',sync)});
-  var p=q.get('paket');if(p){[].forEach.call($('fp').options,function(o){if(o.text.indexOf(p)===0)o.selected=true})}
-  var th=q.get('thema');if(th){var r=f.querySelector('input[name=Thema][value="'+th+'"]');if(r)r.checked=true}
-  try{$('fd').min=new Date().toISOString().slice(0,10)}catch(e){}
-  sync();
-  function text(){var l=['Hallo Devid, ich habe eine Anfrage.','','Thema: '+topic()];
-    f.querySelectorAll('[data-l]').forEach(function(el){if(el.disabled||el.id==='fn'||el.id==='fc'||el.id==='fm')return;var v=el.value.trim();if(!v)return;
-      if(el.type==='date')v=new Date(v).toLocaleDateString('de-DE');l.push(el.dataset.l+': '+v)});
-    var fu=[].map.call(f.querySelectorAll('input[name="Funktionen[]"]:checked:not(:disabled)'),function(x){return x.value});if(fu.length)l.push('Funktionen: '+fu.join(', '));
-    var m=$('fm').value.trim();if(m)l.push('',m);
+  var f=document.getElementById('form'),$=function(id){return document.getElementById(id)},q=new URLSearchParams(location.search);
+  var steps=[].slice.call(f.querySelectorAll('.kx-step')),cur=1,topic='',label='';
+  var titles={hochzeit:['Erzählt mir von eurer Hochzeit.','Wann und wo feiert ihr? Alles freiwillig.'],imagefilm:['Erzähl mir von deiner Firma.','Damit ich dir ein passendes Angebot machen kann.'],social:['Lass uns über Social Media reden.','Einmalig ein paar Reels oder regelmäßig Content?'],event:['Was wird gefeiert?','Wann und wo findet dein Event statt?'],website:['Erzähl mir von deinem Projekt.','Paket und Funktionen kannst du später noch ändern.'],anderes:['Kurz zu dir.','Alles freiwillig.']};
+  var hints={hochzeit:'Was ist euch wichtig? Wie viele Gäste, besondere Wünsche …',imagefilm:'Was soll der Film zeigen? Wo soll er laufen?',social:'Was machst du, und wen willst du erreichen?',event:'Wie viele Gäste, wie lange, was ist geplant?',website:'Was machst du, und was ist dir bei der Website wichtig?',anderes:'Was kann ich für dich tun?'};
+  try{var t=new Date().toISOString().slice(0,10);f.querySelectorAll('.kDate').forEach(function(d){d.min=t})}catch(e){}
+  function go(n,back){cur=n;steps.forEach(function(s){var on=+s.dataset.step===n;s.classList.toggle('on',on);s.classList.toggle('back',!!back)});
+    $('kBar').style.width=(n/4*100)+'%';$('kCount').textContent='Schritt '+n+' von 4';$('kBack').style.visibility=n>1?'visible':'hidden';
+    var first=steps[n-1].querySelector('input:not([type=hidden]):not([type=radio]):not([type=checkbox]):not(:disabled),textarea');
+    if(n>1&&first&&matchMedia('(min-width:700px)').matches)setTimeout(function(){first.focus({preventScroll:true})},350);
+    if(f.getBoundingClientRect().top<0)f.scrollIntoView({behavior:'smooth',block:'start'})}
+  function pick(t){topic=t;var b=f.querySelector('.kx-tile[data-t="'+t+'"]');label=b?b.dataset.label:t;$('kTopic').value=label;
+    f.querySelectorAll('.kx-tile').forEach(function(x){x.classList.toggle('sel',x.dataset.t===t)});
+    f.querySelectorAll('.kx-panel').forEach(function(p){var on=p.dataset.for===t;p.hidden=!on;p.querySelectorAll('input,select,textarea').forEach(function(el){el.disabled=!on})});
+    $('kQ2').textContent=titles[t][0];$('kS2').textContent=titles[t][1];$('kHint').textContent=hints[t]}
+  f.querySelectorAll('.kx-tile').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.t);setTimeout(function(){go(2)},180)})});
+  f.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){go(cur+1)})});
+  $('kBack').addEventListener('click',function(){if(cur>1)go(cur-1,true)});
+  f.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'&&cur<4){e.preventDefault();go(cur+1)}});
+  // Vorauswahl über Links (z. B. kontakt.html?paket=Business oder ?thema=Video)
+  f.querySelectorAll('.kx-panel input').forEach(function(el){el.disabled=true});
+  var pk=q.get('paket'),th=(q.get('thema')||'').toLowerCase();
+  if(pk){pick('website');f.querySelectorAll('#kPakete input').forEach(function(r){if(r.value.indexOf(pk)===0)r.checked=true});go(2)}
+  else if(th==='website'){pick('website');go(2)}
+  else if(th==='hochzeit'){pick('hochzeit');go(2)}
+  function vals(){var out=[];f.querySelectorAll('.kx-panel:not([hidden])').forEach(function(p){
+      p.querySelectorAll('input[data-l]').forEach(function(el){if(el.disabled)return;if((el.type==='radio'||el.type==='checkbox')&&!el.checked)return;var v=el.value.trim();if(!v)return;if(el.type==='date')v=new Date(v+'T12:00').toLocaleDateString('de-DE');out.push(el.dataset.l+': '+v)});
+      var groups={};p.querySelectorAll('input[name$="[]"]:checked').forEach(function(el){var k=el.name.replace('[]','');(groups[k]=groups[k]||[]).push(el.value)});
+      Object.keys(groups).forEach(function(k){out.push(k+': '+groups[k].join(', '))})});return out}
+  function text(){var l=['Hallo Devid, ich habe eine Anfrage.','','Thema: '+(label||'–')].concat(vals());var m=$('fm').value.trim();if(m)l.push('',m);
     var n=$('fn').value.trim();if(n)l.push('','Viele Grüße',n);return l.join('\n')}
-  function check(needConsent){var e=$('err'),bad=null,msg='';
-    f.querySelectorAll('.bad').forEach(function(x){x.classList.remove('bad')});
-    if(!$('fn').value.trim()){bad=$('fn');msg='Bitte gib deinen Namen ein.'}
-    else if(!$('fc').value.trim()){bad=$('fc');msg='Bitte gib an, wie ich dich erreiche: Telefon oder E-Mail.'}
-    else if(needConsent&&!$('fcons').checked){bad=$('fcons');msg='Bitte bestätige noch kurz die Datenschutzerklärung.'}
-    if(bad){bad.classList.add('bad');e.textContent=msg;e.style.display='block';bad.focus();return false}
-    e.style.display='none';return true}
-  $('sendwa').addEventListener('click',function(){if(!$('fn').value.trim()){$('fn').classList.add('bad');$('err').textContent='Bitte gib deinen Namen ein.';$('err').style.display='block';$('fn').focus();return}
-    $('err').style.display='none';window.open('https://wa.me/4915203952714?text='+encodeURIComponent(text()),'_blank','noopener')});
-  function done(html){f.querySelectorAll('.step').forEach(function(s){s.hidden=true});var ok=$('ok');ok.innerHTML=html;ok.style.display='block';ok.focus();ok.scrollIntoView({block:'center',behavior:'smooth'})}
-  f.addEventListener('submit',async function(e){e.preventDefault();if(!check(true))return;
-    var btn=$('send');
-    if(!f.access_key.value.trim()){
-      location.href='mailto:info@balz-media.de?subject='+encodeURIComponent('Anfrage: '+topic())+'&body='+encodeURIComponent(text()+'\nKontakt: '+$('fc').value);return}
-    f.subject.value='Neue Anfrage: '+topic()+' – '+$('fn').value.trim();
-    btn.disabled=true;btn.firstChild.textContent='Wird gesendet …';
-    try{var r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});var j=await r.json();
-      if(!j.success)throw new Error(j.message);
-      done('<b>Danke, '+$('fn').value.trim().split(' ')[0].replace(/[<>&"]/g,'')+'!</b><p>Deine Anfrage ist angekommen. Ich melde mich innerhalb von 24 Stunden bei dir.</p>');f.reset();
-    }catch(err){$('err').innerHTML='Das hat leider nicht geklappt. Schreib mir bitte direkt an <a href="mailto:info@balz-media.de">info@balz-media.de</a> oder per WhatsApp.';$('err').style.display='block'}
-    btn.disabled=false;btn.firstChild.textContent='Anfrage senden'});
-  f.addEventListener('input',function(e){if(e.target.classList.contains('bad'))e.target.classList.remove('bad')});
-  f.addEventListener('change',function(e){if(e.target.classList.contains('bad'))e.target.classList.remove('bad')});
+  function err(msg,box){var e=$('err');e.innerHTML=msg;e.style.display=msg?'block':'none';['wfn','wfc','wcons'].forEach(function(id){$(id).classList.remove('bad')});if(box)$(box).classList.add('bad')}
+  function check(cons){if(!$('fn').value.trim()){err('Bitte gib deinen Namen ein.','wfn');$('fn').focus();return false}
+    if(!$('fc').value.trim()){err('Wie erreiche ich dich? Bitte Telefon oder E-Mail eintragen.','wfc');$('fc').focus();return false}
+    if(cons&&!$('fcons').checked){err('Bitte bestätige noch kurz die Datenschutzerklärung.','wcons');return false}err('');return true}
+  $('sendwa').addEventListener('click',function(){if(!$('fn').value.trim()){err('Bitte gib deinen Namen ein.','wfn');$('fn').focus();return}err('');
+    window.open('https://wa.me/4915203952714?text='+encodeURIComponent(text()),'_blank','noopener')});
+  f.addEventListener('submit',async function(e){e.preventDefault();if(!check(true))return;var b=$('send'),s=b.querySelector('span');
+    f.subject.value='Neue Anfrage: '+(label||'Allgemein')+' – '+$('fn').value.trim();
+    b.disabled=true;s.textContent='Wird gesendet …';
+    try{var r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});var j=await r.json();if(!j.success)throw new Error(j.message);
+      $('okT').textContent='Danke, '+$('fn').value.trim().split(' ')[0]+'!';
+      steps.forEach(function(x){x.classList.remove('on')});f.querySelector('.kx-top').style.visibility='hidden';$('kBar').style.width='100%';
+      $('ok').classList.add('on');$('ok').focus();f.reset();
+    }catch(x){err('Das hat leider nicht geklappt. Schreib mir bitte direkt an <a href="mailto:info@balz-media.de">info@balz-media.de</a> oder per WhatsApp.')}
+    b.disabled=false;s.textContent='Anfrage senden'});
+  f.addEventListener('input',function(e){var w=e.target.closest('.bad');if(w)w.classList.remove('bad')});
 })();
 </script>
 </main>
@@ -173,6 +323,6 @@
     <div class="fbot"><span>© 2026 Balz Media · Devid Balz</span><span>Videografie · Webdesign</span></div>
   </div>
 </footer>
-<script src="main.js?v=3"></script>
+<script src="main.js?v=4"></script>
 </body>
 </html>
