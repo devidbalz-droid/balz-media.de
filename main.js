@@ -13,9 +13,17 @@
 
   // Mobiles Menü
   var mb=document.getElementById('menu'),mn=document.getElementById('mnav');
-  if(mb&&mn)mb.addEventListener('click',function(){
-    var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o);
-  });
+  if(mb&&mn){
+    var dim=document.createElement('div');dim.className='nav-dim';document.body.appendChild(dim);
+    var p=mb.querySelector('path'),HAM='M4 7h16M4 12h16M4 17h16',X='M6 6l12 12M18 6L6 18';
+    function setMenu(o){mn.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);mb.setAttribute('aria-expanded',String(o));
+      mb.setAttribute('aria-label',o?'Menü schließen':'Menü');if(p)p.setAttribute('d',o?X:HAM)}
+    mb.addEventListener('click',function(){setMenu(!mn.classList.contains('open'))});
+    dim.addEventListener('click',function(){setMenu(false)});
+    mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+    addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+    addEventListener('resize',function(){if(innerWidth>1000)setMenu(false)});
+  }
 
   // Linie unter dem Header beim Scrollen
   var h=document.querySelector('header');

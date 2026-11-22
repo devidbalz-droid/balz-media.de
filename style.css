@@ -432,3 +432,20 @@ section{padding:68px 0}
 .page-hero{padding:40px 0 56px}
 .contact-top,.kx-hero{padding-top:36px}
 }
+
+/* Mobiles Menü: legt sich weich über die Seite, nichts verschiebt sich */
+@media(max-width:1000px){
+.mobile-nav,.mobile-nav.open{display:block;position:absolute;left:0;right:0;top:100%;margin:0;max-width:none;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 24px 20px;box-shadow:0 30px 50px -30px rgba(0,0,0,.35)}
+.mobile-nav{opacity:0;visibility:hidden;transform:translateY(-10px);pointer-events:none;transition:opacity .22s ease,transform .32s cubic-bezier(.2,.8,.2,1),visibility 0s linear .32s}
+.mobile-nav.open{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition:opacity .22s ease,transform .32s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.mobile-nav a{display:flex;align-items:center;justify-content:space-between;padding:16px 2px;border-bottom:1px solid var(--line);font-weight:700;font-size:20px;text-decoration:none;opacity:0;transform:translateY(-6px);transition:opacity .25s ease,transform .3s ease}
+.mobile-nav a:last-child{border-bottom:0}
+.mobile-nav a::after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg);opacity:.35;margin-right:4px}
+.mobile-nav.open a{opacity:1;transform:none}
+.mobile-nav.open a:nth-child(1){transition-delay:.03s}.mobile-nav.open a:nth-child(2){transition-delay:.06s}.mobile-nav.open a:nth-child(3){transition-delay:.09s}.mobile-nav.open a:nth-child(4){transition-delay:.12s}.mobile-nav.open a:nth-child(5){transition-delay:.15s}.mobile-nav.open a:nth-child(6){transition-delay:.18s}
+.nav-dim{position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.38);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s}
+body.menu-open .nav-dim{opacity:1;visibility:visible;transition:opacity .25s ease,visibility 0s}
+.menu-btn svg path{transition:d .25s ease}
+}
+@media(max-width:640px){.mobile-nav,.mobile-nav.open{padding-left:20px;padding-right:20px}}
+@media(prefers-reduced-motion:reduce){.mobile-nav,.mobile-nav a,.nav-dim{transition:none!important}}
