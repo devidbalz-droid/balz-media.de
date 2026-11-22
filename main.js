@@ -52,4 +52,14 @@
     tr.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});
     addEventListener('resize',upd);upd();
   });
+
+  // Videos: automatisch abspielen, aber nur wenn sichtbar
+  document.querySelectorAll('.showreel,.hero-film').forEach(function(box){
+    var v=box.querySelector('video');if(!v)return;
+    var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(still){v.removeAttribute('autoplay');v.pause()}
+    if('IntersectionObserver' in window&&!still){
+      new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.25}).observe(v);
+    }
+  });
 })();
