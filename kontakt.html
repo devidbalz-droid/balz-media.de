@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://balz-media.de/img/og-balz-media.jpg">
 <meta property="og:locale" content="de_DE">
 <script>try{var t=localStorage.getItem('bm-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <header>
@@ -76,6 +76,10 @@
 .kx-in input:focus+span,.kx-in input:not(:placeholder-shown)+span,.kx-in textarea:focus+span,.kx-in textarea:not(:placeholder-shown)+span,.kx-in.fixed span{top:8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .kx-in input::placeholder,.kx-in textarea::placeholder{color:transparent}
 .kx-in.bad input{border-color:#ff6b5e}
+.kx-in span{right:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kx-ta textarea{padding-top:32px}
+.kx-ta span{top:10px!important;font-size:12px!important;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.kx-ta textarea::placeholder{color:rgba(255,255,255,.38)}
 .kx-lbl{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--kx-soft);margin:6px 0 10px}
 .kx-chips{display:flex;flex-wrap:wrap;gap:8px}
 .kx-chips label{position:relative}
@@ -221,7 +225,7 @@
     <!-- 3 Nachricht -->
     <section class="kx-step" data-step="3">
       <h2 class="kx-q" id="kQ3">Erzähl mir mehr.</h2><p class="kx-sub">Ein, zwei Sätze reichen. Du kannst das Feld auch leer lassen.</p>
-      <label class="kx-in"><textarea id="fm" name="Nachricht" data-l="Nachricht" placeholder=" "></textarea><span id="kHint">Deine Nachricht</span></label>
+      <label class="kx-in kx-ta"><textarea id="fm" name="Nachricht" data-l="Nachricht" placeholder="Erzähl mir kurz, worum es geht …"></textarea><span>Deine Nachricht</span></label>
       <div class="kx-nav"><button class="kx-btn" type="button" data-next>Weiter<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
     </section>
 
@@ -276,7 +280,7 @@
   function pick(t){topic=t;var b=f.querySelector('.kx-tile[data-t="'+t+'"]');label=b?b.dataset.label:t;$('kTopic').value=label;
     f.querySelectorAll('.kx-tile').forEach(function(x){x.classList.toggle('sel',x.dataset.t===t)});
     f.querySelectorAll('.kx-panel').forEach(function(p){var on=p.dataset.for===t;p.hidden=!on;p.querySelectorAll('input,select,textarea').forEach(function(el){el.disabled=!on})});
-    $('kQ2').textContent=titles[t][0];$('kS2').textContent=titles[t][1];$('kHint').textContent=hints[t]}
+    $('kQ2').textContent=titles[t][0];$('kS2').textContent=titles[t][1];$('fm').placeholder=hints[t]}
   f.querySelectorAll('.kx-tile').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.t);setTimeout(function(){go(2)},180)})});
   f.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){go(cur+1)})});
   $('kBack').addEventListener('click',function(){if(cur>1)go(cur-1,true)});
@@ -323,6 +327,6 @@
     <div class="fbot"><span>© 2026 Balz Media · Devid Balz</span><span>Videografie · Webdesign</span></div>
   </div>
 </footer>
-<script src="main.js?v=6"></script>
+<script src="main.js?v=7"></script>
 </body>
 </html>
